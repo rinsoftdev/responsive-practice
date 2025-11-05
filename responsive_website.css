@@ -1,0 +1,177 @@
+html, * {
+    padding: 0;
+    margin: 0;
+    font-family: "Monaco", monospace;
+}
+
+
+#content{
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+    background-color: #CE5678;
+    /*background-image: url("images/shirtBGimg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+#grid{
+    border: 5px dashed #FEB781;
+    border-radius: 2%;
+    padding: 1%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    'eaten eaten alec'
+    '. tc .'
+    'pat mario mario';
+}
+
+#text{
+    color: white;
+    border: 5px dashed #915FA4;
+    padding: 1%;
+    border-radius: 2%;
+    max-width: 50vw;
+    max-height: 100%;
+}
+
+header{
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    height: 10vh;
+    font-size: clamp(1rem, 2.5vw, 3.5rem);
+    background-color: #FEB781;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1rem, 2.5vw, 3.5rem);
+    height: 10vh;
+    background-color: #915FA4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+/*traffic cone */
+.TCimg{
+    max-width: 20vh;
+    border-radius: 10%;
+    transition: all 0.3s ease-in-out;
+}
+.TCimg:hover{
+    transform: scale(1.05);
+}
+.TCimg-container{
+    grid-area: tc;
+    align-self: center;
+    justify-self: center;
+}
+
+/* alec giffies */
+.alec-gif-container{
+    grid-area: alec;
+    align-self: center;
+    justify-self: center;
+}
+.alecgif{
+    max-width: 15vh;
+    transition: all 0.3s ease-in-out;
+}
+.alecgif:hover{
+    transform: scale(1.05);
+}
+
+
+/* pet gifies hover thing*/
+.pet-gif-container:hover .patgif{
+opacity: 0;
+}
+.pet-gif-container:hover .fastpat{
+opacity: 1;
+}
+.fastpat{
+    position: absolute;
+    opacity: 0;
+}
+.patgif{
+    position: absolute;
+    opacity: 1;
+}
+.pet-gif-container img {
+    width: 20vh;
+
+}
+.pet-gif-container{
+    grid-area: pat;
+}
+
+/*eaten art gifs*/
+.art-eaten-container{
+    grid-area: eaten;
+    align-self: center;
+}
+.art-eaten-container img{
+    width: 50vh;
+    height: auto;
+}
+
+/*mario tire gif*/
+.mario-tire-container{
+    grid-area: mario;
+    align-self: center;
+    justify-self: center;
+}
+.mario-tire-container img{
+    width: 40vh;
+    height: auto;
+}
+
+@media screen and (max-width: 600px){
+    #grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 2fr 2fr;
+        grid-template-areas:
+    'eaten eaten eaten'
+    'pat tc alec'
+    'mario mario mario';
+    }
+    #content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+        background-image: none;
+    }
+    .art-eaten-container{
+        grid-area: eaten;
+        align-self: end;
+    }
+    .art-eaten-container img{
+        width: 100%;
+        height: auto;
+    }
+    #text{
+        max-width: 100%;
+        max-height: 100%;
+        text-align:center;
+    }
+    .alecgif{
+        max-width: 20vh;
+        transition: all 0.3s ease-in-out;
+    }
+
+}
